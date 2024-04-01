@@ -1,11 +1,7 @@
- FROM nginx
- 
- RUN apt-get update && apt-get upgrade -y
- 
+FROM nginx:latest
 
- 
- EXPOSE 8080
- 
- CMD ["nginx", "-g", "daemon off;"]
+WORKDIR /usr/share/nginx/html
 
+COPY . .
 
+EXPOSE 8021
